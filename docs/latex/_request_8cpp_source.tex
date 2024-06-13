@@ -1,0 +1,37 @@
+\doxysection{Request.\+cpp}
+\hypertarget{_request_8cpp_source}{}\label{_request_8cpp_source}\mbox{\hyperlink{_request_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00005}00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00011}\mbox{\hyperlink{class_request}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_request}{Request}}\ \{}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00012}00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00013}\mbox{\hyperlink{class_request_a804bbe08bc2a314bf012d8cb1a5b3435}{00013}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_request_a804bbe08bc2a314bf012d8cb1a5b3435}{IpIn}};\ }
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00014}\mbox{\hyperlink{class_request_a57c177393f1c7f326979fa443915b624}{00014}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_request_a57c177393f1c7f326979fa443915b624}{IpOut}};\ }
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00015}\mbox{\hyperlink{class_request_a12ba8b6c1b2d3a0b5df599fb0067256b}{00015}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_request_a12ba8b6c1b2d3a0b5df599fb0067256b}{requestTime}};\ }
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00023}\mbox{\hyperlink{class_request_ad9ad374780e1e047f09af55cd4a48304}{00023}}\ \ \ \ \ \mbox{\hyperlink{class_request_ad9ad374780e1e047f09af55cd4a48304}{Request}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_request_a804bbe08bc2a314bf012d8cb1a5b3435}{IpIn}},\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_request_a57c177393f1c7f326979fa443915b624}{IpOut}},\ \textcolor{keywordtype}{int}\ time)\ \{}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ this-\/>IpIn\ =\ \mbox{\hyperlink{class_request_a804bbe08bc2a314bf012d8cb1a5b3435}{IpIn}};}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ this-\/>IpOut\ =\ \mbox{\hyperlink{class_request_a57c177393f1c7f326979fa443915b624}{IpOut}};}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ this-\/>requestTime\ =\ time;}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00032}\mbox{\hyperlink{class_request_afaf8d8928de7ffff8a3767589489bd33}{00032}}\ \ \ \ \ \mbox{\hyperlink{class_request_afaf8d8928de7ffff8a3767589489bd33}{Request}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ this-\/>IpIn\ =\ this-\/>\mbox{\hyperlink{class_request_a207cb8d8f64d5aade67013eb958e2256}{GenerateIp}}();}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ this-\/>IpOut\ =\ this-\/>\mbox{\hyperlink{class_request_a207cb8d8f64d5aade67013eb958e2256}{GenerateIp}}();}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ this-\/>requestTime\ =\ 3\ +\ rand()\ \%\ 98;}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00042}\mbox{\hyperlink{class_request_a207cb8d8f64d5aade67013eb958e2256}{00042}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_request_a207cb8d8f64d5aade67013eb958e2256}{GenerateIp}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ octet1\ =\ rand()\ \%\ 255;}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ octet2\ =\ rand()\ \%\ 255;}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ octet3\ =\ rand()\ \%\ 255;}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ octet4\ =\ rand()\ \%\ 255;}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ to\_string(octet1)\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ to\_string(octet2)\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ to\_string(octet3)\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ to\_string(octet4);}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_request_8cpp_source_l00049}00049\ \};}
+
+\end{DoxyCode}

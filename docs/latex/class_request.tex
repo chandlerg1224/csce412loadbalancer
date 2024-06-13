@@ -1,0 +1,179 @@
+\doxysection{Request Class Reference}
+\hypertarget{class_request}{}\label{class_request}\index{Request@{Request}}
+
+
+Class to represent a network request with input and output IP addresses and a processing time.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_request_ad9ad374780e1e047f09af55cd4a48304}{Request}} (string \mbox{\hyperlink{class_request_a804bbe08bc2a314bf012d8cb1a5b3435}{Ip\+In}}, string \mbox{\hyperlink{class_request_a57c177393f1c7f326979fa443915b624}{Ip\+Out}}, int time)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{class_request}{Request} object with specified IP addresses and time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_request_afaf8d8928de7ffff8a3767589489bd33}{Request}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{class_request}{Request} object with randomly generated IP addresses and a random processing time. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_request_a207cb8d8f64d5aade67013eb958e2256}{Generate\+Ip}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random IP address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_request_a804bbe08bc2a314bf012d8cb1a5b3435}{Ip\+In}}
+\begin{DoxyCompactList}\small\item\em The input IP address of the request. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_request_a57c177393f1c7f326979fa443915b624}{Ip\+Out}}
+\begin{DoxyCompactList}\small\item\em The output IP address of the request. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_request_a12ba8b6c1b2d3a0b5df599fb0067256b}{request\+Time}}
+\begin{DoxyCompactList}\small\item\em The time required to process the request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to represent a network request with input and output IP addresses and a processing time. 
+
+Definition at line \mbox{\hyperlink{_request_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_request_8cpp_source}{Request.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_request_ad9ad374780e1e047f09af55cd4a48304}\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_request_ad9ad374780e1e047f09af55cd4a48304} 
+Request\+::\+Request (\begin{DoxyParamCaption}\item[{string}]{Ip\+In}{, }\item[{string}]{Ip\+Out}{, }\item[{int}]{time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a new \doxylink{class_request}{Request} object with specified IP addresses and time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ip\+In} & The input IP address \\
+\hline
+{\em Ip\+Out} & The output IP address \\
+\hline
+{\em time} & The time required to process the request \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_request_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_request_8cpp_source}{Request.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_request_a804bbe08bc2a314bf012d8cb1a5b3435}{IpIn}}\ =\ \mbox{\hyperlink{class_request_a804bbe08bc2a314bf012d8cb1a5b3435}{IpIn}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_request_a57c177393f1c7f326979fa443915b624}{IpOut}}\ =\ \mbox{\hyperlink{class_request_a57c177393f1c7f326979fa443915b624}{IpOut}};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_request_a12ba8b6c1b2d3a0b5df599fb0067256b}{requestTime}}\ =\ time;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_request_8cpp_source_l00013}{Ip\+In}}, and \mbox{\hyperlink{_request_8cpp_source_l00014}{Ip\+Out}}.
+
+\Hypertarget{class_request_afaf8d8928de7ffff8a3767589489bd33}\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_request_afaf8d8928de7ffff8a3767589489bd33} 
+Request\+::\+Request (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a new \doxylink{class_request}{Request} object with randomly generated IP addresses and a random processing time. 
+
+
+
+Definition at line \mbox{\hyperlink{_request_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_request_8cpp_source}{Request.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_request_a804bbe08bc2a314bf012d8cb1a5b3435}{IpIn}}\ =\ this-\/>\mbox{\hyperlink{class_request_a207cb8d8f64d5aade67013eb958e2256}{GenerateIp}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_request_a57c177393f1c7f326979fa443915b624}{IpOut}}\ =\ this-\/>\mbox{\hyperlink{class_request_a207cb8d8f64d5aade67013eb958e2256}{GenerateIp}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_request_a12ba8b6c1b2d3a0b5df599fb0067256b}{requestTime}}\ =\ 3\ +\ rand()\ \%\ 98;}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_request_8cpp_source_l00042}{Generate\+Ip()}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_request_a207cb8d8f64d5aade67013eb958e2256}\index{Request@{Request}!GenerateIp@{GenerateIp}}
+\index{GenerateIp@{GenerateIp}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{GenerateIp()}{GenerateIp()}}
+{\footnotesize\ttfamily \label{class_request_a207cb8d8f64d5aade67013eb958e2256} 
+string Request\+::\+Generate\+Ip (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a random IP address. 
+
+\begin{DoxyReturn}{Returns}
+string A randomly generated IP address 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_request_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_request_8cpp_source}{Request.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ octet1\ =\ rand()\ \%\ 255;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ octet2\ =\ rand()\ \%\ 255;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ octet3\ =\ rand()\ \%\ 255;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ octet4\ =\ rand()\ \%\ 255;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ to\_string(octet1)\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ to\_string(octet2)\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ to\_string(octet3)\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ to\_string(octet4);}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_request_a804bbe08bc2a314bf012d8cb1a5b3435}\index{Request@{Request}!IpIn@{IpIn}}
+\index{IpIn@{IpIn}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{IpIn}{IpIn}}
+{\footnotesize\ttfamily \label{class_request_a804bbe08bc2a314bf012d8cb1a5b3435} 
+string Request\+::\+Ip\+In}
+
+
+
+The input IP address of the request. 
+
+
+
+Definition at line \mbox{\hyperlink{_request_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_request_8cpp_source}{Request.\+cpp}}.
+
+\Hypertarget{class_request_a57c177393f1c7f326979fa443915b624}\index{Request@{Request}!IpOut@{IpOut}}
+\index{IpOut@{IpOut}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{IpOut}{IpOut}}
+{\footnotesize\ttfamily \label{class_request_a57c177393f1c7f326979fa443915b624} 
+string Request\+::\+Ip\+Out}
+
+
+
+The output IP address of the request. 
+
+
+
+Definition at line \mbox{\hyperlink{_request_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_request_8cpp_source}{Request.\+cpp}}.
+
+\Hypertarget{class_request_a12ba8b6c1b2d3a0b5df599fb0067256b}\index{Request@{Request}!requestTime@{requestTime}}
+\index{requestTime@{requestTime}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{requestTime}{requestTime}}
+{\footnotesize\ttfamily \label{class_request_a12ba8b6c1b2d3a0b5df599fb0067256b} 
+int Request\+::request\+Time}
+
+
+
+The time required to process the request. 
+
+
+
+Definition at line \mbox{\hyperlink{_request_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_request_8cpp_source}{Request.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_request_8cpp}{Request.\+cpp}}\end{DoxyCompactItemize}

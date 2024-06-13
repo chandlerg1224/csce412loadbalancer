@@ -1,0 +1,112 @@
+\doxysection{Web\+Server Class Reference}
+\hypertarget{class_web_server}{}\label{class_web_server}\index{WebServer@{WebServer}}
+
+
+Class to represent a web server that processes network requests.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_web_server_a146f41c85ecf05e84b2a1aa8f6699c13}{Web\+Server}} (int \mbox{\hyperlink{class_web_server_ab793767a07d9eba9b03d683b3dcca3b7}{Id}})
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{class_web_server}{Web\+Server} object with the specified ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_web_server_ab793767a07d9eba9b03d683b3dcca3b7}{Id}}
+\begin{DoxyCompactList}\small\item\em Unique identifier for the web server. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_web_server_a8d2de3839528c6d7436c15c193eeb4c0}{Count\+Down}}
+\begin{DoxyCompactList}\small\item\em Countdown timer for processing the current request. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_request}{Request}} \mbox{\hyperlink{class_web_server_ab4261daec8589d83112e463c7daa09f6}{Current\+Request}}
+\begin{DoxyCompactList}\small\item\em The current request being processed by the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to represent a web server that processes network requests. 
+
+Definition at line \mbox{\hyperlink{_web_server_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_web_server_8cpp_source}{Web\+Server.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_web_server_a146f41c85ecf05e84b2a1aa8f6699c13}\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{WebServer()}{WebServer()}}
+{\footnotesize\ttfamily \label{class_web_server_a146f41c85ecf05e84b2a1aa8f6699c13} 
+Web\+Server\+::\+Web\+Server (\begin{DoxyParamCaption}\item[{int}]{Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a new \doxylink{class_web_server}{Web\+Server} object with the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Id} & The unique identifier for the web server \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_web_server_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_web_server_8cpp_source}{Web\+Server.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_web_server_ab793767a07d9eba9b03d683b3dcca3b7}{Id}}\ =\ \mbox{\hyperlink{class_web_server_ab793767a07d9eba9b03d683b3dcca3b7}{Id}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_web_server_a8d2de3839528c6d7436c15c193eeb4c0}{CountDown}}\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_web_server_8cpp_source_l00009}{Id}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_web_server_a8d2de3839528c6d7436c15c193eeb4c0}\index{WebServer@{WebServer}!CountDown@{CountDown}}
+\index{CountDown@{CountDown}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{CountDown}{CountDown}}
+{\footnotesize\ttfamily \label{class_web_server_a8d2de3839528c6d7436c15c193eeb4c0} 
+int Web\+Server\+::\+Count\+Down}
+
+
+
+Countdown timer for processing the current request. 
+
+
+
+Definition at line \mbox{\hyperlink{_web_server_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_web_server_8cpp_source}{Web\+Server.\+cpp}}.
+
+\Hypertarget{class_web_server_ab4261daec8589d83112e463c7daa09f6}\index{WebServer@{WebServer}!CurrentRequest@{CurrentRequest}}
+\index{CurrentRequest@{CurrentRequest}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{CurrentRequest}{CurrentRequest}}
+{\footnotesize\ttfamily \label{class_web_server_ab4261daec8589d83112e463c7daa09f6} 
+\mbox{\hyperlink{class_request}{Request}} Web\+Server\+::\+Current\+Request}
+
+
+
+The current request being processed by the server. 
+
+
+
+Definition at line \mbox{\hyperlink{_web_server_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_web_server_8cpp_source}{Web\+Server.\+cpp}}.
+
+\Hypertarget{class_web_server_ab793767a07d9eba9b03d683b3dcca3b7}\index{WebServer@{WebServer}!Id@{Id}}
+\index{Id@{Id}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily \label{class_web_server_ab793767a07d9eba9b03d683b3dcca3b7} 
+int Web\+Server\+::\+Id}
+
+
+
+Unique identifier for the web server. 
+
+
+
+Definition at line \mbox{\hyperlink{_web_server_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{_web_server_8cpp_source}{Web\+Server.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_web_server_8cpp}{Web\+Server.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,113 @@
+\doxysection{Load\+Balancer.\+cpp}
+\hypertarget{_load_balancer_8cpp_source}{}\label{_load_balancer_8cpp_source}\mbox{\hyperlink{_load_balancer_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <math.h>}\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_web_server_8cpp}{WebServer.cpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00008}00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00014}\mbox{\hyperlink{class_load_balancer}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_load_balancer}{LoadBalancer}}\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00016}\mbox{\hyperlink{class_load_balancer_ade933f24e09dffdd80d38597d376477b}{00016}}\ \ \ \ \ queue<Request>\ \mbox{\hyperlink{class_load_balancer_ade933f24e09dffdd80d38597d376477b}{RequestQueue}};\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00017}\mbox{\hyperlink{class_load_balancer_af147b77707395bac7082f1efda0da749}{00017}}\ \ \ \ \ vector<WebServer>\ \mbox{\hyperlink{class_load_balancer_af147b77707395bac7082f1efda0da749}{WebServers}};\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00018}\mbox{\hyperlink{class_load_balancer_a2101d4453bd91dd8b8b43feed9c25ccd}{00018}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_a2101d4453bd91dd8b8b43feed9c25ccd}{Time}};\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00019}\mbox{\hyperlink{class_load_balancer_a6de0d3c0d82fd2af20e07cadde7707d9}{00019}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_a6de0d3c0d82fd2af20e07cadde7707d9}{NumberOfServers}};\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00020}\mbox{\hyperlink{class_load_balancer_a4c30ccb3d7a5af62329e99a2055fbc45}{00020}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_a4c30ccb3d7a5af62329e99a2055fbc45}{QueueCapacity}};\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00021}\mbox{\hyperlink{class_load_balancer_a810b494595d12117a2a82ecd51843a96}{00021}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_a810b494595d12117a2a82ecd51843a96}{NumberOfRejections}};\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00022}\mbox{\hyperlink{class_load_balancer_a904477f12ff5dae5cbc1fe1c0ee0a446}{00022}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_a904477f12ff5dae5cbc1fe1c0ee0a446}{NumberOfUniqueServers}};\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00023}\mbox{\hyperlink{class_load_balancer_ac10bb20d3008820ffdf58b1c2c67b7de}{00023}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_ac10bb20d3008820ffdf58b1c2c67b7de}{NumberOfRequestsProcessed}};\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00030}\mbox{\hyperlink{class_load_balancer_a5571e7897fe503893a7bbede4d2aafed}{00030}}\ \ \ \ \ \mbox{\hyperlink{class_load_balancer_a5571e7897fe503893a7bbede4d2aafed}{LoadBalancer}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_a6de0d3c0d82fd2af20e07cadde7707d9}{NumberOfServers}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_a2101d4453bd91dd8b8b43feed9c25ccd}{Time}})\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Creating\ Load\ Balancer..."{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ this-\/>RequestQueue\ =\ queue<Request>();}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ this-\/>WebServers\ =\ vector<WebServer>();}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ this-\/>Time\ =\ \mbox{\hyperlink{class_load_balancer_a2101d4453bd91dd8b8b43feed9c25ccd}{Time}};}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ this-\/>NumberOfServers\ =\ \mbox{\hyperlink{class_load_balancer_a6de0d3c0d82fd2af20e07cadde7707d9}{NumberOfServers}};}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ this-\/>QueueCapacity\ =\ \mbox{\hyperlink{class_load_balancer_a6de0d3c0d82fd2af20e07cadde7707d9}{NumberOfServers}}\ *\ 100;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ this-\/>NumberOfRejections\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ this-\/>NumberOfUniqueServers\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ this-\/>NumberOfRequestsProcessed\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ freopen(\textcolor{stringliteral}{"{}log.txt"{}},\ \textcolor{stringliteral}{"{}w"{}},\ stdout);}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00046}\mbox{\hyperlink{class_load_balancer_a47688969f3510b6916aa0519c1571431}{00046}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_balancer_a47688969f3510b6916aa0519c1571431}{RunLoadBalancer}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Running\ Load\ Balancer..."{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ web\ servers}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>\mbox{\hyperlink{class_load_balancer_a6de0d3c0d82fd2af20e07cadde7707d9}{NumberOfServers}};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Server\ "{}}\ <<\ this-\/>NumberOfUniqueServers\ <<\ \textcolor{stringliteral}{"{}\ added."{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_web_server}{WebServer}}\ Server\ =\ \mbox{\hyperlink{class_web_server}{WebServer}}(this-\/>NumberOfUniqueServers++);}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>WebServers.push\_back(Server);}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Populate\ the\ request\ queue}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>\mbox{\hyperlink{class_load_balancer_a4c30ccb3d7a5af62329e99a2055fbc45}{QueueCapacity}};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_request}{Request}}\ r\ =\ \mbox{\hyperlink{class_request}{Request}}();}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>RequestQueue.push(r);}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Starting\ Queue\ Size:\ "{}}\ <<\ this-\/>RequestQueue.size()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Main\ simulation\ loop}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{class_load_balancer_a2101d4453bd91dd8b8b43feed9c25ccd}{Time}}\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ a\ new\ server\ if\ the\ queue\ is\ almost\ full}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>RequestQueue.size()\ >=\ this-\/>QueueCapacity\ -\/\ 5)\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Server\ "{}}\ <<\ this-\/>NumberOfUniqueServers\ <<\ \textcolor{stringliteral}{"{}\ added."{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_web_server}{WebServer}}\ ws\ =\ \mbox{\hyperlink{class_web_server}{WebServer}}(this-\/>NumberOfUniqueServers++);}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>WebServers.push\_back(ws);}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ a\ server\ if\ the\ queue\ is\ less\ than\ half\ full}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>RequestQueue.size()\ <=\ this-\/>QueueCapacity\ /\ 2\ +\ 5\ \&\&\ !this-\/>RequestQueue.empty())\ \{\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Server\ "{}}\ <<\ this-\/>WebServers.back().Id\ <<\ \textcolor{stringliteral}{"{}\ removed."{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>WebServers.pop\_back();}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Process\ requests\ on\ each\ server}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>WebServers.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>WebServers.at(i).CountDown\ ==\ 0\ \&\&\ !this-\/>RequestQueue.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assign\ a\ new\ request\ to\ the\ server}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>WebServers.at(i).CurrentRequest\ =\ this-\/>RequestQueue.front();}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>WebServers.at(i).CountDown\ =\ this-\/>WebServers.at(i).CurrentRequest.requestTime;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>RequestQueue.pop();}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Decrease\ the\ server's\ countdown}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>WebServers.at(i).CountDown-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>WebServers.at(i).CountDown\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}A\ request\ from\ IP\ "{}}\ <<\ this-\/>WebServers.at(i).CurrentRequest.IpIn\ <<\ \textcolor{stringliteral}{"{}\ has\ been\ processed\ by\ server\ "{}}\ <<\ this-\/>WebServers.at(i).Id\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>NumberOfRequestsProcessed++;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_load_balancer_a2101d4453bd91dd8b8b43feed9c25ccd}{Time}}-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ new\ requests}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ NumberOfNewRequests\ =\ rand()\ \%\ 3;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ NumberOfNewRequests;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>RequestQueue.size()\ ==\ this-\/>QueueCapacity)\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}A\ new\ request\ has\ been\ trashed."{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>NumberOfRejections++;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_request}{Request}}\ r\ =\ \mbox{\hyperlink{class_request}{Request}}();}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>RequestQueue.push(r);}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Print\ summary}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ cout\ <<\ endl\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Load\ Balancer\ Summary:"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Current\ servers:\ "{}}\ <<\ this-\/>WebServers.size()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Requests\ in\ queue:\ "{}}\ <<\ this-\/>RequestQueue.size()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Trashed\ Requests:\ "{}}\ <<\ this-\/>NumberOfRejections\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Number\ of\ Processed\ Requests:\ "{}}\ <<\ this-\/>NumberOfRequestsProcessed\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Ending\ Queue\ Size:\ "{}}\ <<\ this-\/>RequestQueue.size()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_load_balancer_8cpp_source_l00120}00120\ \};}
+
+\end{DoxyCode}
